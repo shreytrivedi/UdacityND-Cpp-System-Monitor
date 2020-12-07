@@ -9,17 +9,17 @@
 
 namespace SystemFactory
 {
-//     std::unique_ptr<System> GetSystem()
-//     {
-// #ifdef LINUX_SYSTEM
-//         //return std::make_unique<LinuxSystem>();
-//         std::unique_ptr<System> obj(new LinuxSystem());
-//         return std::move(obj);
-// #endif
-//     }
-
-    System* GetSystem()
+    std::unique_ptr<System> GetSystem()
     {
-        return new LinuxSystem();
+#ifdef LINUX_SYSTEM
+        //return std::make_unique<LinuxSystem>();
+        std::unique_ptr<System> obj(new LinuxSystem());
+        return std::move(obj);
+#endif
     }
+
+    // System* GetSystem()
+    // {
+    //     return new LinuxSystem();
+    // }
 }

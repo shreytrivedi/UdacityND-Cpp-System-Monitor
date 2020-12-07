@@ -4,7 +4,7 @@
 
 
 int main() {
-  //std::unique_ptr<System> system = SystemFactory::GetSystem();
-  System *system = SystemFactory::GetSystem();
+  std::unique_ptr<System> system (SystemFactory::GetSystem());
+  //System *system = SystemFactory::GetSystem();
   NCursesDisplay::Display(*system);
 }

@@ -6,7 +6,7 @@
 
 namespace SystemFactory
 {
-    System* GetSystem();
+    std::unique_ptr<System> GetSystem();
 }
 
 #endif //SYSTEM_FACTORY_H
